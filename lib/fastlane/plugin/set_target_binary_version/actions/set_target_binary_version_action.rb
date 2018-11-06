@@ -49,7 +49,6 @@ module Fastlane
                 line.replace line.sub(version_name, new_version.to_s)
                 foundVersionName = "true"
               end
-            else 
               temp_file.puts line
             end
             file.close
@@ -58,8 +57,13 @@ module Fastlane
           temp_file.close
           FileUtils.mv(temp_file.path, path)
           temp_file.unlink
+          UI.success("Succcessfully reaplced version name")
       end
 
+      def self.setTargetbinaryVersionIos 
+        
+      end
+      
       def self.description
         "A plugin which set the target binary version for code push"
       end
